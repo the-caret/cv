@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Edwin Dacaret — Ingeniero en Ciberseguridad</title>
 <meta name="description" content="Currículum de Edwin Dacaret, Ingeniero en Ciberseguridad especializado en inteligencia de ciberamenazas.">
-<meta name="robots" content="index, follow">
+<!-- No indexar: el CV se comparte por enlace o QR, no se busca en Google.
+     robots.txt no sirve acá: solo se lee en la raíz del dominio
+     (the-caret.github.io/robots.txt), que pertenece a otro repositorio.
+     Y aunque se pudiera, robots.txt bloquea el rastreo, no la indexación:
+     una URL bloqueada puede aparecer igual en resultados si alguien la
+     enlaza. La etiqueta noindex sí lo impide, y para que el rastreador la
+     lea, la página debe seguir siendo rastreable. -->
+<meta name="robots" content="noindex, nofollow">
 <style>
   /* Paleta: un solo color de marca, usado solo en líneas y títulos.
      Deriva del azul del CV original (#323b4c, HSL 219,21%,25%), rotado a verde
@@ -237,7 +244,7 @@
     <h2>Idiomas</h2>
     <ul class="langs">
       <li>Portugués <span>| Nativo</span></li>
-      <li>Español <span>| Fluido</span></li>
+      <li>Español <span>| Avanzado (C1)</span></li>
       <li>Inglés <span>| Intermedio (B1)</span></li>
     </ul>
 
