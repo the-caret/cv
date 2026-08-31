@@ -9,11 +9,13 @@
 <style>
   /* Paleta: un solo color de marca, usado solo en líneas y títulos.
      Deriva del azul del CV original (#323b4c, HSL 219,21%,25%), rotado a verde
-     conservando luminosidad y saturación -> #324d3b, HSL(140,21%,25%). */
+     conservando luminosidad y saturación. El verde de énfasis vigente es
+     #63b93c, elegido por el usuario. Ojo: sobre blanco da 2,46:1 de contraste,
+     por debajo del mínimo WCAG AA. #3e7525 es el mismo tono con 5,56:1. */
   :root {
     color-scheme: light;            /* el CV es un documento: siempre claro */
-    --brand: #324d3b;
-    --rule:  #c3cfc7;               /* verde muy desaturado, para filetes */
+    --brand: #63b93c;
+    --rule:  #cfe3c4;               /* tinte suave del verde, para filetes */
     --ink:   #4f4f4f;
     --soft:  #737373;
     --faint: #9d9d9d;
@@ -76,11 +78,12 @@
   main h2.cont { font-size: 11pt; color: var(--faint); border-bottom-color: var(--rule); margin-top: 0; }
 
   /* ---------- línea de tiempo ---------- */
-  .timeline { border-left: 1px solid var(--rule); margin: 4.5mm 0 0 1.4mm; padding-left: 7mm; }
+  /* Sin línea vertical: los círculos quedan como marcador de cada empleo. */
+  .timeline { margin: 4.5mm 0 0 1.4mm; padding-left: 6mm; }
   .job { position: relative; padding-bottom: 5.5mm; }
   .job:last-child { padding-bottom: 0; }
   .job::before {
-    content: ""; position: absolute; left: -9.6mm; top: 1.1mm;
+    content: ""; position: absolute; left: -6.2mm; top: 1.1mm;
     width: 2.6mm; height: 2.6mm; border: 1px solid var(--brand);
     border-radius: 50%; background: #fff;
   }
