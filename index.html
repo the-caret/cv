@@ -17,12 +17,12 @@
   /* Paleta: un solo color de marca, usado solo en líneas y títulos.
      Deriva del azul del CV original (#323b4c, HSL 219,21%,25%), rotado a verde
      conservando luminosidad y saturación. El verde de énfasis vigente es
-     #63b93c, elegido por el usuario. Ojo: sobre blanco da 2,46:1 de contraste,
-     por debajo del mínimo WCAG AA. #3e7525 es el mismo tono con 5,56:1. */
+     #417a4b: 5,11:1 de contraste sobre blanco, por encima del mínimo WCAG AA
+     de 4,5:1 para texto normal. */
   :root {
     color-scheme: light;            /* el CV es un documento: siempre claro */
-    --brand: #63b93c;
-    --rule:  #cfe3c4;               /* tinte suave del verde, para filetes */
+    --brand: #417a4b;
+    --rule:  #c8dacb;               /* tinte suave del verde, para filetes */
     --ink:   #4f4f4f;
     --soft:  #737373;
     --faint: #9d9d9d;
@@ -189,34 +189,29 @@
         <div class="org">Stefanini — asignado a Banco Ripley</div>
         <div class="role">Analista de Inteligencia de Amenazas</div>
         <ul>
-          <li>Operación del ciclo de inteligencia de amenazas para la organización:
-          recolección, procesamiento, análisis y difusión de inteligencia
+          <li>Recolección, procesamiento, análisis y difusión de inteligencia
           accionable hacia el SOC y las áreas de negocio.</li>
           <li>Diseño y desarrollo de una plataforma interna de inteligencia sobre
           filtraciones de credenciales: pipeline en Python que ingesta, normaliza,
-          deduplica y enriquece los datos sobre PostgreSQL con esquema por capas
-          (raw → curated → gold) y analítica en Metabase. Reemplazó un flujo
-          manual basado en planillas, con despliegue en contenedores sobre nube
-          pública y acceso restringido por VPN/IAP.</li>
+          deduplica y enriquece los datos sobre PostgreSQL y analítica en Metabase.
+          Reemplazó un flujo manual basado en planillas, con despliegue en docker
+          sobre nube GCP.</li>
           <li>Automatización del triage y validación OSINT de indicadores de
-          compromiso (IP, ASN, dominio, URL, hash) provenientes de WAF y XDR:
-          scoring explicable con decaimiento por frescura, caché y control de
-          cuotas por proveedor, y entregables listos para SOAR, MISP y STIX que
-          sustentan la recomendación de bloqueos permanentes o temporales.</li>
+          compromiso con scoring detallado con decaimiento por frescura, caché y
+          control de cuotas por proveedor, y entregables listos para SOAR, MISP y
+          STIX que sustentan la recomendación de bloqueos permanentes o
+          temporales.</li>
           <li>Investigación de direcciones IP sospechosas contra la analítica del
           WAF (Cloudflare GraphQL): reconstrucción del tráfico completo por IP,
           eventos de firewall, análisis de exposición por host y path, y reportes
-          accionables para respuesta a incidentes; aplicado a casos de
-          <em>credential stuffing</em> y abuso automatizado.</li>
-          <li>Monitoreo de reivindicaciones publicadas por actores de la dark web
-          (ransomware, hacktivismo y venta de accesos) mediante recolección
-          automatizada desde fuentes clearnet, normalización y deduplicación entre
-          fuentes, con priorización de los mercados de interés del negocio (Chile
-          y Perú).</li>
-          <li>Investigación y curación de casos de compromiso de terceros
-          (proveedores, partners y clientes): alertas e informes con IOCs
-          <em>defanged</em>, mapeo a MITRE ATT&amp;CK, evaluación de confiabilidad
-          mediante <em>Admiralty Code</em> y marcado TLP.</li>
+          accionables para respuesta a incidentes;</li>
+          <li>Investigación y curación de casos de compromiso de terceros guiada por
+          agentes de IA: el procedimiento de análisis está encapsulado en una
+          <em>skill</em> propia que conduce al agente por un flujo predefinido
+          —clasificación del caso, extracción de IOCs <em>defanged</em>, mapeo a
+          MITRE ATT&amp;CK, calificación Admiralty y marcado TLP—, con las reglas de
+          OPSEC escritas como restricciones no negociables y las plantillas de
+          entregable versionadas junto al procedimiento.</li>
         </ul>
       </article>
 
@@ -231,14 +226,9 @@
     <h2>Conocimientos</h2>
     <ul>
       <li>Inteligencia de Ciberamenazas</li>
-      <li>SOAR</li>
-      <li>SIEM</li>
       <li>Programación</li>
-      <li>TTPs</li>
-      <li>Sistemas Operativos</li>
       <li>Automatización con agentes de IA</li>
-      <li>Claude Code · skills y hooks</li>
-      <li>CI/CD · GitHub Actions</li>
+      <li>Claude Code - skills y hooks</li>
     </ul>
 
     <h2>Idiomas</h2>
@@ -272,7 +262,7 @@
 
       <article class="job">
         <div class="when">noviembre de 2022 - febrero de 2024</div>
-        <div class="org">NLT Secure — Compañía CISO Global LATAM</div>
+        <div class="org">NLT Secure</div>
         <div class="role">Analista de Inteligencia en Ciberamenazas</div>
         <ul>
           <li>Confección de alertas de vulnerabilidades.</li>
@@ -288,7 +278,7 @@
 
       <article class="job">
         <div class="when">enero de 2022 - octubre de 2022</div>
-        <div class="org">NLT Secure — Compañía CISO Global LATAM</div>
+        <div class="org">NLT Secure</div>
         <div class="role">Analista de Ciberseguridad N1</div>
         <ul>
           <li>Desarrollo de scripts en Python para el monitoreo en tiempo real de
