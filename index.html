@@ -38,8 +38,9 @@
   }
 
   /* ---------- la hoja ---------- */
+  /* Carta: 215,9 x 279,4 mm (8,5 x 11 in). Más ancha y más corta que A4. */
   .page {
-    width: 210mm; min-height: 297mm;
+    width: 215.9mm; min-height: 279.4mm;
     margin: 0 auto 1.6rem;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.14), 0 8px 24px rgba(0,0,0,.09);
@@ -116,7 +117,7 @@
   }
 
   /* ---------- impresión ---------- */
-  @page { size: A4; margin: 0; }
+  @page { size: Letter; margin: 0; }
   @media print {
     html, body { background: #fff; padding: 0; }
     /* Se reafirma la maqueta de dos columnas: al imprimir manda esto. */
@@ -125,7 +126,7 @@
     aside { border-right: 1px solid var(--rule); border-top: 0;
             padding-right: 8mm; padding-top: 0; margin-top: 0; }
     main  { order: 0; }
-    .page { box-shadow: none; margin: 0; width: 210mm; min-height: 297mm;
+    .page { box-shadow: none; margin: 0; width: 215.9mm; min-height: 279.4mm;
             break-after: page; }
     .page:last-of-type { break-after: auto; }
     .job { break-inside: auto; }
