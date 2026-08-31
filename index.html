@@ -102,7 +102,10 @@
   .job li::marker { color: var(--faint); }
 
   /* ---------- pantallas angostas: la hoja se adapta ---------- */
-  @media (max-width: 860px) {
+  /* Solo pantalla. Sin 'screen and', esto también aplica al imprimir: una
+     hoja A4 mide 794 px a 96 dpi, por debajo del umbral, y la barra lateral
+     terminaba apilada al final del contenido en el PDF. */
+  @media screen and (max-width: 860px) {
     body { padding: 0; }
     .page { width: 100%; min-height: 0; padding: 7mm 6mm; margin-bottom: 0;
             box-shadow: none; display: flex; flex-direction: column-reverse; }
@@ -116,6 +119,12 @@
   @page { size: A4; margin: 0; }
   @media print {
     html, body { background: #fff; padding: 0; }
+    /* Se reafirma la maqueta de dos columnas: al imprimir manda esto. */
+    .page { display: grid; grid-template-columns: 33% 1fr; column-gap: 9mm;
+            padding: 16mm 15mm 14mm; }
+    aside { border-right: 1px solid var(--rule); border-top: 0;
+            padding-right: 8mm; padding-top: 0; margin-top: 0; }
+    main  { order: 0; }
     .page { box-shadow: none; margin: 0; width: 210mm; min-height: 297mm;
             break-after: page; }
     .page:last-of-type { break-after: auto; }
@@ -190,7 +199,8 @@
         <div class="role">Analista de Inteligencia de Amenazas</div>
         <ul>
           <li>Recolección, procesamiento, análisis y difusión de inteligencia
-          accionable hacia el SOC y las áreas de negocio.</li>
+          accionable hacia el CSIRT y otras áreas del negocio, con apoyo directo a
+          la respuesta a incidentes.</li>
           <li>Diseño y desarrollo de una plataforma interna de inteligencia sobre
           filtraciones de credenciales: pipeline en Python que ingesta, normaliza,
           deduplica y enriquece los datos sobre PostgreSQL y analítica en Metabase.
