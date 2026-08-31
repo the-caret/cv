@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edwin Dacaret — Ingeniero en Ciberseguridad</title>
+<meta name="description" content="Currículum de Edwin Dacaret, Ingeniero en Ciberseguridad especializado en inteligencia de ciberamenazas.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --red:   #e10000;
+    --dark:  #464646;
+    --light: #f5f5f5;
+    --rule:  #e2e2e2;
+    --ink:   #1c1c1c;
+    --muted: #5f5f5f;
+    --paper: #ffffff;
+    --bg:    #ececed;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --light: #2a2a2a;
+      --rule:  #3a3a3a;
+      --ink:   #e8e8e8;
+      --muted: #a8a8a8;
+      --paper: #1b1b1b;
+      --bg:    #121212;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.55 system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .sheet {
+    max-width: 60rem;
+    margin: 0 auto;
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 31% 1fr;
+    column-gap: 2.2rem;
+    padding: 2.5rem 2.5rem 3.5rem;
+  }
+  aside { border-right: 4px solid var(--light); padding-right: 1.6rem;
+          display: flex; flex-direction: column; }
+  main  { min-width: 0; }
+
+  /* --- cabecera --- */
+  .banner {
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    padding: 1.9rem 1.2rem;
+    margin-bottom: 2.4rem;
+  }
+  .banner h1 {
+    margin: 0;
+    font-size: clamp(1.7rem, 4.6vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .banner .rule { width: 3rem; height: 2px; background: #fff; margin: .7rem auto; }
+  .banner p { margin: 0; font-size: 1.02rem; color: #dcdcdc; }
+
+  /* --- títulos de sección --- */
+  h2 {
+    font-size: 1.24rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin: 2.1rem 0 .2rem;
+    padding-bottom: .3rem;
+  }
+  h2::after { content: ""; display: block; width: 2.4rem; height: 3px; background: var(--red); margin-top: .3rem; }
+  aside h2:first-child, main h2:first-child { margin-top: 0; }
+
+  /* --- barra lateral --- */
+  .skill { font-weight: 700; font-size: .95rem; padding: .55rem 0 .5rem; border-bottom: 1px solid var(--rule); }
+  .skill:last-child { border-bottom: 0; }
+  .contact { margin: .9rem 0 0; padding: 0; list-style: none; font-size: .95rem; }
+  .contact li { display: flex; gap: .6rem; align-items: baseline; margin-bottom: .7rem; }
+  .contact .ic { color: var(--red); flex: 0 0 1.1rem; text-align: center; }
+  .contact a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .contact a:hover { border-bottom-color: var(--red); }
+  .langs { margin: .9rem 0 0; padding: 0; list-style: none; font-size: .95rem; }
+  .langs li { display: flex; justify-content: space-between; gap: .8rem; padding: .45rem 0; border-bottom: 1px solid var(--rule); }
+  .langs li:last-child { border-bottom: 0; }
+  .langs span { color: var(--muted); }
+  .qr { margin: auto 0 0; padding-top: 2.4rem; text-align: center; }
+  .qr img { width: 60%; max-width: 8rem; image-rendering: pixelated; }
+  .qr figcaption { font-size: .75rem; color: var(--muted); margin-top: .4rem; }
+
+  /* --- experiencia --- */
+  .job { margin-top: 1.4rem; }
+  .job:first-of-type { margin-top: .9rem; }
+  .job-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+  .job-title { font-weight: 700; font-size: 1.02rem; }
+  .job-org { color: var(--red); font-weight: 700; font-size: .95rem; }
+  .job-date {
+    background: var(--red); color: #fff; font-size: .78rem; font-weight: 700;
+    padding: .18rem .6rem; white-space: nowrap; flex: 0 0 auto;
+  }
+  .job ul { margin: .6rem 0 0; padding-left: 1.1rem; }
+  .job li { margin-bottom: .45rem; }
+  .job li::marker { color: var(--red); }
+  main p { margin: 0 0 .8rem; }
+
+  /* --- educación / certificaciones --- */
+  .entry { margin-top: 1rem; }
+  .entry .what { font-weight: 700; }
+  .entry .where { color: var(--red); font-size: .95rem; }
+  .entry .when { color: var(--muted); font-size: .88rem; }
+
+  footer { max-width: 60rem; margin: 0 auto; padding: 1.2rem 2.5rem 2.5rem; color: var(--muted); font-size: .82rem; }
+  footer a { color: inherit; }
+
+  /* --- responsive --- */
+  @media (max-width: 46rem) {
+    .sheet { display: flex; flex-direction: column; padding: 0 1.4rem 1.4rem; }
+    main  { order: 1; }
+    aside { order: 2; border-right: 0; border-top: 4px solid var(--light);
+            padding-right: 0; padding-top: 1.6rem; margin-top: 2rem; }
+    .banner { margin: 0 -1.4rem 2rem; }
+    .qr { margin-top: 2rem; }
+    footer { padding: 1rem 1.4rem 2rem; }
+  }
+
+  /* --- impresión --- */
+  @media print {
+    :root { --paper:#fff; --bg:#fff; --ink:#000; }
+    body { background:#fff; font-size: 10.5pt; }
+    .sheet { padding: 0; max-width: none; }
+    .qr, footer { display: none; }
+    .job { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <aside>
+    <h2>Conocimientos</h2>
+    <div class="skill">Inteligencia de Ciberamenazas</div>
+    <div class="skill">SOAR</div>
+    <div class="skill">SIEM</div>
+    <div class="skill">Programación</div>
+    <div class="skill">TTPs</div>
+    <div class="skill">Sistemas Operativos</div>
+
+    <h2>Contacto</h2>
+    <ul class="contact">
+      <li><span class="ic" aria-hidden="true">✉</span><a href="mailto:edacaret@pm.me">edacaret@pm.me</a></li>
+      <li><span class="ic" aria-hidden="true">◉</span><span>Salamanca, Coquimbo,<br>Chile</span></li>
+      <li><span class="ic" aria-hidden="true">⚑</span><span>Chilena / Brasileña</span></li>
+    </ul>
+
+    <h2>Idiomas</h2>
+    <ul class="langs">
+      <li>Portugués <span>Nativo</span></li>
+      <li>Español <span>Fluido</span></li>
+      <li>Inglés <span>Intermedio (B1)</span></li>
+    </ul>
+
+    <h2>Educación</h2>
+    <div class="entry">
+      <div class="what">Ingeniería en Ciberseguridad</div>
+      <div class="where">Instituto Profesional CIISA</div>
+      <div class="when">2020 – 2024</div>
+    </div>
+    <div class="entry">
+      <div class="what">Técnico en Ciberseguridad</div>
+      <div class="where">Instituto Profesional CIISA</div>
+      <div class="when">2020 – 2022</div>
+    </div>
+
+    <h2>Certificaciones</h2>
+    <div class="entry">
+      <div class="what">Certified Threat Intelligence Analyst (C|TIA)</div>
+      <div class="where">EC-Council</div>
+      <div class="when">En curso</div>
+    </div>
+
+    <figure class="qr">
+      <img src="qrcode.png" alt="Código QR con la dirección de esta página">
+      <figcaption>the-caret.github.io/cv</figcaption>
+    </figure>
+  </aside>
+
+  <main>
+    <header class="banner">
+      <h1>Edwin Dacaret</h1>
+      <div class="rule"></div>
+      <p>Ingeniero en Ciberseguridad</p>
+    </header>
+
+    <h2>Perfil</h2>
+    <p>Ingeniero en Ciberseguridad con más de cuatro años en inteligencia de
+    ciberamenazas, operación de SOC y automatización. Actualmente analista de
+    inteligencia de amenazas en el sector bancario, donde construyo las
+    herramientas con las que trabajo: pipelines de datos sobre filtraciones,
+    triage automatizado de indicadores de compromiso y monitoreo de actores en
+    la dark web.</p>
+    <p>Me dedico a la ciberseguridad porque me fascina comprender el
+    funcionamiento de los ataques y sus detecciones.</p>
+
+    <h2>Experiencia profesional</h2>
+
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-title">Analista de Inteligencia de Amenazas</div>
+          <div class="job-org">Stefanini — asignado a Banco Ripley</div>
+        </div>
+        <div class="job-date">feb 2025 – actualidad</div>
+      </div>
+      <ul>
+        <li>Operación del ciclo de inteligencia de amenazas para la organización:
+        recolección, procesamiento, análisis y difusión de inteligencia accionable
+        hacia el SOC y las áreas de negocio.</li>
+        <li>Diseño y desarrollo de una plataforma interna de inteligencia sobre
+        <strong>filtraciones de credenciales</strong>: pipeline en Python que
+        ingesta, normaliza, deduplica y enriquece los datos sobre PostgreSQL con
+        esquema por capas (<em>raw → curated → gold</em>) y analítica en Metabase.
+        Reemplazó un flujo manual basado en planillas, con despliegue en
+        contenedores sobre nube pública y acceso restringido por VPN/IAP.</li>
+        <li>Automatización del <strong>triage y validación OSINT de indicadores de
+        compromiso</strong> (IP, ASN, dominio, URL, hash) provenientes de WAF y
+        XDR: scoring explicable con decaimiento por frescura, caché y control de
+        cuotas por proveedor, y entregables listos para SOAR, MISP y STIX que
+        sustentan la recomendación de bloqueos permanentes o temporales.</li>
+        <li><strong>Investigación de direcciones IP sospechosas</strong> contra la
+        analítica del WAF (Cloudflare GraphQL): reconstrucción del tráfico completo
+        por IP, eventos de firewall, análisis de exposición por host y path, y
+        reportes accionables para respuesta a incidentes; aplicado a casos de
+        <em>credential stuffing</em> y abuso automatizado.</li>
+        <li><strong>Monitoreo de reivindicaciones publicadas por actores de la dark
+        web</strong> (ransomware, hacktivismo y venta de accesos) mediante
+        recolección automatizada desde fuentes clearnet, normalización y
+        deduplicación entre fuentes, con priorización de los mercados de interés
+        del negocio (Chile y Perú).</li>
+        <li><strong>Investigación y curación de casos de compromiso de
+        terceros</strong> (proveedores, partners y clientes): alertas e informes
+        con IOCs <em>defanged</em>, mapeo a MITRE ATT&amp;CK, evaluación de
+        confiabilidad mediante <em>Admiralty Code</em> y marcado TLP.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-title">Cyber Security Specialist</div>
+          <div class="job-org">Falabella — CDC · SOC · Data Analytics</div>
+        </div>
+        <div class="job-date">mar 2024 – feb 2025</div>
+      </div>
+      <ul>
+        <li>Administración de plataforma SOAR <em>on-premise</em> en Python.</li>
+        <li>Administración y creación de <em>playbooks</em> y reportes en plataforma SOAR.</li>
+        <li>Análisis y administración de reglas de detección en plataforma SIEM.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-title">Analista de Inteligencia en Ciberamenazas</div>
+          <div class="job-org">NLT Secure — Compañía CISO Global LATAM</div>
+        </div>
+        <div class="job-date">nov 2022 – feb 2024</div>
+      </div>
+      <ul>
+        <li>Confección de alertas de vulnerabilidades.</li>
+        <li>Recolección y gestión de Indicadores de Compromiso (IOCs).</li>
+        <li>Confección de resúmenes semanales de <em>feeds</em> de ciberamenazas.</li>
+        <li>Redacción de artículos sobre amenazas y casos de ataques cibernéticos locales.</li>
+        <li>Elaboración de informes sobre campañas y amenazas emergentes.</li>
+        <li>Capacitaciones internas y externas sobre inteligencia de ciberamenazas.</li>
+        <li>Evaluación de estrategias y herramientas para servicios de CTI y Pentesting.</li>
+        <li>Desarrollo de <em>scripts</em> en Python para gestión de IOCs.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <div>
+          <div class="job-title">Analista de Ciberseguridad N1</div>
+          <div class="job-org">NLT Secure — Compañía CISO Global LATAM</div>
+        </div>
+        <div class="job-date">ene 2022 – oct 2022</div>
+      </div>
+      <ul>
+        <li>Desarrollo de <em>scripts</em> en Python para el monitoreo en tiempo real
+        de canales de Telegram y la recolección automatizada de <em>feeds</em> RSS
+        sobre vulnerabilidades.</li>
+        <li>Apoyo en el análisis de vulnerabilidades, gestión de tickets y
+        capacitaciones internas.</li>
+        <li>Implementación de la plataforma MISP.</li>
+        <li>Recolección de IOCs.</li>
+        <li>Redacción de artículos sobre amenazas y casos de ataques cibernéticos locales.</li>
+        <li>Confección de alertas de vulnerabilidades.</li>
+      </ul>
+    </article>
+
+  </main>
+
+</div>
+
+<footer>
+  Versión web del currículum. Para la versión en PDF, con datos de contacto
+  completos, escribir a <a href="mailto:edacaret@pm.me">edacaret@pm.me</a>.
+</footer>
+
+</body>
+</html>
