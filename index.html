@@ -126,9 +126,13 @@
     aside { border-right: 1px solid var(--rule); border-top: 0;
             padding-right: 8mm; padding-top: 0; margin-top: 0; }
     main  { order: 0; }
-    .page { box-shadow: none; margin: 0; width: 215.9mm; min-height: 279.4mm;
-            break-after: page; }
-    .page:last-of-type { break-after: auto; }
+    /* Nada de forzar el alto exacto del papel: con min-height igual a la hoja,
+       un píxel de redondeo la desborda y el navegador emite una hoja casi
+       vacía. El salto se pide ANTES de cada hoja siguiente, no después de
+       cada una, que además dejaba un salto sobrante al final. */
+    .page { box-shadow: none; margin: 0; width: auto; min-height: 0;
+            break-after: auto; break-inside: auto; }
+    .page + .page { break-before: page; }
     .job { break-inside: auto; }
   }
 </style>
